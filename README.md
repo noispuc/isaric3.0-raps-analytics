@@ -14,22 +14,15 @@ Reproducible Analytical Pipelines (RAPs) are modular sequences of analytical ste
 
 ## 🧪 Reproducible Analytical Pipelines (RAPs)
 **Pipelines disponíveis:**
-
-📊 Visualização de dados e estatísticas descritivas (via VERTEX)
-
-🎯 Seleção de variáveis
-
-🧩 Imputação de dados
-
-🔎 Identificação de fatores de risco
-
-🧠 Modelagem preditiva
+- 📊 Data visualisation and descriptive statistics (using VERTEX)
+- 🎯 Variable Selection
+- 🧩 Data Imputation
+- 🔎 Risk factors
+- 🧠 Predictive modelling
 
 **Em desenvolvimento:**
-
-✅ Verificação de qualidade dos dados
-
-🔄 Análise de colinearidade
+- ✅ Data Quality check
+- 🔄 Collinearity Analysis
 
 ## 🛠️ Technologies Used
 This platform integrates several key technologies to support data automation and analysis:
