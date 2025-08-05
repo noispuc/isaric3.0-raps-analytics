@@ -4,7 +4,9 @@ This repository is built to facilitate data analysis using Reproducible Analytic
 
 ## The analytical flow is powered by three core ISARIC tools:
 🧠 ARC – A machine-readable library of standardized questions and expert-designed templates for case report forms (CRFs)
+
 🛠️ BRIDGE – Builds customizable CRFs and REDCap databases from ARC standards
+
 📊 VERTEX – Transforms structured REDCap data into visual outputs and analysis-ready formats
 
 ## 🔄 What Are RAPs?
@@ -14,13 +16,19 @@ Reproducible Analytical Pipelines (RAPs) are modular sequences of analytical ste
 **Pipelines disponíveis:**
 
 📊 Visualização de dados e estatísticas descritivas (via VERTEX)
+
 🎯 Seleção de variáveis
+
 🧩 Imputação de dados
+
 🔎 Identificação de fatores de risco
+
 🧠 Modelagem preditiva
 
 **Em desenvolvimento:**
+
 ✅ Verificação de qualidade dos dados
+
 🔄 Análise de colinearidade
 
 ## 🛠️ Technologies Used
