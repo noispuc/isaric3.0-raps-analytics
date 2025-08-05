@@ -1,51 +1,31 @@
-# 📦 ISARIC HUB SA Template - Repositório de Referência Técnica
+# 📦 ISARIC HUB South America – Clinical Epidemiology Platform 🧬🌎
 
-Este repositório serve como exemplo **didático e técnico** da estrutura padrão adotada pelos projetos da organização NOIS.
-Atualize o readme para reflita as informações corretas do projeto.
+This repository is built to facilitate data analysis using Reproducible Analytical Pipelines (RAPs), enabling researchers and public health experts to work with clinical data in a reliable and standardized manner. From real-time outbreak surveillance to scientific discovery, RAPs ensure that data workflows are scalable, replicable, and auditable.
 
-## 🧠 O que você encontra aqui:
-- Estrutura de diretórios
-- Configuração de CI/CD
-- Documentação com MkDocs
-- Testes automatizados
-- Padrões de `.env`, `.gitignore`, `pyproject.toml`, etc.
-- Checklist de limpeza para novos projetos
+## The analytical flow is powered by three core ISARIC tools:
+🧠 ARC – A machine-readable library of standardized questions and expert-designed templates for case report forms (CRFs)
+🛠️ BRIDGE – Builds customizable CRFs and REDCap databases from ARC standards
+📊 VERTEX – Transforms structured REDCap data into visual outputs and analysis-ready formats
 
-Ao criar um novo projeto, use este repositório como **template** e ajuste conforme necessário.
+## 🔄 What Are RAPs?
+Reproducible Analytical Pipelines (RAPs) are modular sequences of analytical steps designed to ensure data analysis will be perfomed using easy-to-use tools.
 
-## 📦 Estrutura
+## 🧪 Reproducible Analytical Pipelines (RAPs)
+**Pipelines disponíveis:**
 
-- `src/`: Código fonte principal
-- `tests/`: Testes automatizados com `unittest`
-- `docs/`: Documentação gerada com MkDocs
-- `config/`: Arquivos `.env` para ambientes
+📊 Visualização de dados e estatísticas descritivas (via VERTEX)
+🎯 Seleção de variáveis
+🧩 Imputação de dados
+🔎 Identificação de fatores de risco
+🧠 Modelagem preditiva
 
-## 📚 Documentação
+**Em desenvolvimento:**
+✅ Verificação de qualidade dos dados
+🔄 Análise de colinearidade
 
-A documentação é gerada com [MkDocs](https://www.mkdocs.org/) e inclui:
-
-- Referência de código com `mkdocstrings`
-- Diagramas em Mermaid
-- Guia de início rápido
-
-## ⚙️ Requisitos
-
-- Python 3.10+
-- [pip](https://pip.pypa.io/en/stable/)
-- Ambiente virtual recomendado
-
-```bash
-python -m venv venv
-source venv/bin/activate  # ou venv\Scripts\activate no Windows
-pip install -r requirements.txt
-
-## ✅ Checklist de Limpeza Pós-Clonagem
-
-Após criar seu repositório a partir deste template:
-
-- [ ] Remover testes em `tests/` se não forem usados
-- [ ] Ajustar estrutura em `src/` conforme sua lógica de negócio
-- [ ] Atualizar ou apagar arquivos em `docs/` se necessário
-- [ ] Configurar `.env` a partir do `config/`
-- [ ] Revisar `README.md` com a descrição específica do projeto
-- [ ] Validar dependências e versões no `requirements.txt`
+## 🛠️ Technologies Used
+This platform integrates several key technologies to support data automation and analysis:
+- Python – Programming language powering analytics and automation
+- REDCap – Secure web platform for clinical data collection
+- Pandas – Python library for data manipulation and transformation
+- Jupyter Notebooks – Interactive development environments for executing and understand statistics techniques
