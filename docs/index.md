@@ -1,13 +1,11 @@
 ## 💡 Fluxo de Execução — Diagrama Mermaid
 
 ```mermaid
-flowchart TD
-    A[main.py] --> B[Importa funções do calculadora.py]
-    B --> C[Executa somar(a, b)]
-    B --> D[Executa subtrair(a, b)]
-    B --> E[Executa multiplicar(a, b)]
-    B --> F[Executa dividir(a, b)]
-    C --> G[Exibe resultado no terminal]
-    D --> G
-    E --> G
-    F --> G
+graph TD
+    A[Enter Chart Definition] --> B(Preview)
+    B --> C{decide}
+    C --> D[Keep]
+    C --> E[Edit Definition]
+    E --> B
+    D --> F[Save Image and Code]
+    F --> B

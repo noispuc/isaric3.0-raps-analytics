@@ -1,0 +1,43 @@
+site_name: ISARIC 3.0 RAPS Analytics
+site_description: Ferramentas analíticas para modelagem preditiva, inferência e pré-processamento de dados clínicos.
+site_author: ISARIC HUB South America
+
+theme:
+  name: material
+  language: pt
+
+nav:
+  - Início: index.md
+  - Introdução: getting_started.md
+  - Módulos:
+      - Inferência: inference.md
+      - Preditivo: predictive.md
+      - Pré-processamento: preprocessing.md
+  - Dados:
+      - df_map.csv: df_map.csv
+      - df_model.csv: df_model.csv
+      - dados_uti_ems.xlsx: dados_uti_ems.xlsx
+  - Testes: tests/test_calculadora.py
+  - README: README.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.snippets
+  - pymdownx.mark
+  - pymdownx.highlight
+  - pymdownx.arithmatex
+  - admonition
+  - codehilite
+
+extra:
+  mermaid: true
+
+plugins:
+  - search

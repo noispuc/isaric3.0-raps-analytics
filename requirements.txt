@@ -1,1 +1,12 @@
-
+python>=3.10
+numpy>=1.24
+pandas>=1.5
+statsmodels>=0.13
+scikit-learn>=1.2
+matplotlib>=3.6
+seaborn>=0.12
+scipy>=1.10
+plotly>=5.13
+lifelines>=0.27
+mkdocs==1.5.3
+mkdocs-material==9.5.10
