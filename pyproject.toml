@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rapsanalytics"
+version = "0.1.0"
+description = "Pacote modular para análise preditiva, inferência e pré-processamento"
+authors = [
+    { name = "Carlos" }
+]
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true

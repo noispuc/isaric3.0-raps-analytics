@@ -23,6 +23,7 @@ nav:
       - df_map.csv: df_map.csv
       - df_model.csv: df_model.csv
       - dados_uti_ems.xlsx: dados_uti_ems.xlsx
+  - Pacotes: packages.md
   - Testes: tests/test_calculadora.py
   - README: README.md
 
