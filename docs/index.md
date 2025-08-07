@@ -1,4 +1,4 @@
-## 💡 Fluxo de Execução — Diagrama Mermaid
+## Diagram
 
 ```mermaid
 graph TD
@@ -9,3 +9,4 @@ graph TD
     E --> B
     D --> F[Save Image and Code]
     F --> B
+```

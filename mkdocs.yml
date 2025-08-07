@@ -4,6 +4,12 @@ site_author: ISARIC HUB South America
 
 theme:
   name: material
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.code.tabs
+    - content.code.highlight
+    - content.code.mermaid
   language: pt
 
 nav:
@@ -33,8 +39,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.highlight
   - pymdownx.arithmatex
-  - admonition
-  - codehilite
 
 extra:
   mermaid: true
