@@ -49,17 +49,8 @@ jobs:
       - name: Build docs (clean)
         run: mkdocs build --clean
 
-
-      - name: Publicar (auto após CI)
-        if: ${{ github.event_name == 'workflow_run' }}
-        run: mkdocs gh-deploy --force
-
-    
-      - name: Publicar (manual: prod)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.environment == 'prod' }}
-        run: mkdocs gh-deploy --force
-
    
+
       - name: Skip publish (manual: dev)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.environment == 'dev' }}
         run: echo "Ambiente dev: apenas build (sem publicar)"
