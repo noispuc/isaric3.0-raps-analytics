@@ -7,7 +7,7 @@ name = "rapsanalytics"
 version = "0.1.0"
 description = "Pacote modular para análise preditiva, inferência e pré-processamento"
 authors = [
-    { name = "Carlos" }
+    { name = "ISARIC HUB SA" }
 ]
 license = { text = "MIT" }
 
