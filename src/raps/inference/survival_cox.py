@@ -26,7 +26,7 @@ import warnings
 import pandas as pd
 from lifelines.exceptions import ApproximationWarning
 
-from core import (
+from .core import (
     fit_cox_model,
     extract_model_summary,
     calculate_c_index,
@@ -36,7 +36,7 @@ from core import (
     display_model_fit_metrics
 )
 
-from utils import (
+from .utils import (
     preprocess_cox_data,
     summarize_model_output
 )

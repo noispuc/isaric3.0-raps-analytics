@@ -22,8 +22,8 @@ from sklearn.model_selection import KFold, cross_val_score
 from sklearn.linear_model import LinearRegression
 from statsmodels.stats.stattools import durbin_watson
 from statsmodels.stats.outliers_influence import variance_inflation_factor
-from core import execute_glm_regression
-from utils import fig_forest_plot
+from .core import execute_glm_regression
+from .utils import fig_forest_plot
 
 # Load dataset
 # Load dataset from local file
