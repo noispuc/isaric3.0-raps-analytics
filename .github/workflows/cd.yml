@@ -1,11 +1,9 @@
 name: CD workflow
 
 on:
-
   workflow_run:
-    workflows: ["CI workflow"]        
+    workflows: ["CI workflow"]  
     types: [completed]
-
 
   workflow_dispatch:
     inputs:
@@ -17,17 +15,15 @@ on:
         options: [dev, prod]
 
 permissions:
-  contents: write           
+  contents: write
 
 jobs:
   deploy_docs:
-
     if: >
       (github.event_name == 'workflow_run' &&
        github.event.workflow_run.conclusion == 'success' &&
        github.event.workflow_run.head_branch == 'main') ||
       (github.event_name == 'workflow_dispatch')
-
     runs-on: ubuntu-latest
 
     steps:
@@ -50,13 +46,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
+      - name: Build docs (clean)
+        run: mkdocs build --clean
 
-      - name: Build estrito (valida links/caminhos)
-        run: mkdocs build  --clean
+
+      - name: Publicar (auto após CI)
+        if: ${{ github.event_name == 'workflow_run' }}
+        run: mkdocs gh-deploy --force
 
     
+      - name: Publicar (manual: prod)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.environment == 'prod' }}
+        run: mkdocs gh-deploy --force
 
-
+   
       - name: Skip publish (manual: dev)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.environment == 'dev' }}
         run: echo "Ambiente dev: apenas build (sem publicar)"
