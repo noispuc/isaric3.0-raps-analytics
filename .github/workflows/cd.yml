@@ -17,13 +17,11 @@ on:
         options: [dev, prod]
 
 permissions:
-  contents: write            # necessário pro gh-pages
+  contents: write           
 
 jobs:
   deploy_docs:
-    # Regra: roda se
-    # - foi acionado automaticamente E o CI passou E a branch é main
-    # - OU foi acionado manualmente
+
     if: >
       (github.event_name == 'workflow_run' &&
        github.event.workflow_run.conclusion == 'success' &&
@@ -58,7 +56,7 @@ jobs:
 
     
 
-      # Skip quando manual em dev (apenas checagem)
+
       - name: Skip publish (manual: dev)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.environment == 'dev' }}
         run: echo "Ambiente dev: apenas build (sem publicar)"
