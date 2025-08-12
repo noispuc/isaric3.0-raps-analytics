@@ -3,7 +3,7 @@ import numpy as np
 import random
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
-from utils import calc_median_iqr, is_binary
+from .utils import calc_median_iqr, is_binary
 
 def run_mice_imputation(df, interest_vars, aux_vars, max_iter=10, random_state=100, prefix_sep='!'):
     """
