@@ -52,5 +52,5 @@ jobs:
    
 
       - name: Skip publish (manual: dev)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.environment == 'dev' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && github.inputs.environment == 'dev' }}
         run: echo "Ambiente dev: apenas build (sem publicar)"
