@@ -12,6 +12,7 @@ sys.path.insert(0, str(SRC))
 from raps.predictive.linear_log_reg import linear_regression
 from raps.predictive.logistic_regression import logistic_regression
 from raps.inference.survival_cox import survival_cox
+from raps.preprocessing.mice import mice
 
 # 3) smoke test
 import numpy as np, pandas as pd
@@ -49,10 +50,18 @@ cox_predictors = [
 
 cox = survival_cox(df_model,duration_col,event_col,cox_predictors)
 
+df = pd.read_excel('data/dados_uti_ems.xlsx')
+cols_to_test = ['Age', 'LengthHospitalStayPriorUnitAdmission', 'SofaScore', 'los', 'Saps3Points']
+missing_levels = [0.01, 0.05, 0.10, 0.20, 0.30]
+
+MICE = mice(df,cols_to_test,missing_levels)
+
 
 #print("Linear Regression:")
 #print(linear)
 #print("Logistic Regression:")
 #print(logistic)
-print("Cox Model:")
-print(cox)
+#print("Cox Model:")
+#print(cox)
+print("Mice:")
+print(MICE)
