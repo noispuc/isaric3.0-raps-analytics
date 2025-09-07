@@ -26,27 +26,41 @@ Dependências:
 
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
 from .core import create_mnar, evaluate_imputation
 from .utils import extract_stat
 
 def mice(df,cols_to_test,missing_levels):
     """
-    Executa a validação do MICE em dados reais com padrão MNAR simulado.
+    Evaluate MNAR imputation performance across variables and missingness levels.
 
-    Para cada coluna de interesse, este pipeline:
-    - Gera 30 replicações com MNAR em níveis variados (1%, 5%, 10%, 20%, 30%)
-    - Imputa os valores faltantes usando IterativeImputer (MICE)
-    - Calcula métricas de erro (MAE, MAPE)
-    - Plota boxplots das métricas por coluna e nível de ausência
-    - Gera um resumo estatístico final
+    This function simulates Missing-Not-At-Random (MNAR) patterns for each target
+    column, generates imputed datasets via `create_mnar`, evaluates the imputation
+    quality with `evaluate_imputation`, extracts statistics (MAE and MAPE) using
+    `extract_stat`, and returns an aggregated summary table (mean and std) per
+    (column, missing_pct).
 
-    Os resultados são impressos no console e exibidos como gráficos.
+    Args:
+        df (pd.DataFrame): The original dataset.
+        cols_to_test (Sequence[str]): Columns to be individually subjected to MNAR simulation.
+        missing_levels (Sequence[float]): Fractions of MNAR missingness to test (each in [0, 1]).
+       
 
-    Requisitos:
-    -----------
-    O arquivo 'dados_uti_ems.xlsx' deve estar disponível na raiz do projeto.
+    Returns:
+        pd.DataFrame: Summary table with one row per (column, missing_pct) and columns:
+            - "column": Target column evaluated.
+            - "missing_pct": MNAR level used (float in [0, 1]).
+            - "MAE_mean": Mean MAE across imputation runs.
+            - "MAE_std":  Standard deviation of MAE.
+            - "MAPE_mean": Mean MAPE across imputation runs.
+            - "MAPE_std":  Standard deviation of MAPE.
+
+    Raises:
+        KeyError: If any column in `cols_to_test` is not present in `df`.
+        ValueError: If `missing_levels` contains values outside [0, 1] or is empty.
+
+    Example:
+            summary = mice(df, cols_to_test=["age", "crp"], missing_levels=[0.1, 0.3, 0.5])
+            summary.sort_values(["column", "missing_pct"]).head()
     """
 
     results = []
