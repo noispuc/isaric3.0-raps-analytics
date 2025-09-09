@@ -29,7 +29,7 @@ import numpy as np
 from .core import create_mnar, evaluate_imputation
 from .utils import extract_stat
 
-def mice(df,cols_to_test,missing_levels):
+def evaluate_mice_mnar(df,cols_to_test,missing_levels):
     """
     Evaluate MNAR imputation performance across variables and missingness levels.
 
