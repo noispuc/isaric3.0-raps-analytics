@@ -10,3 +10,4 @@ lifelines>=0.27
 mkdocs==1.5.3
 mkdocs-material==9.5.10
 pymdown-extensions>=10.0
+openpyxl>=3.1
